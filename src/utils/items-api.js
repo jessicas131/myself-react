@@ -1,8 +1,8 @@
+import tokenService from './tokenService'
 const BASE_URL = '/api/items';
 
 export function getAll() {
-  return fetch(BASE_URL)
-  .then(res => res.json());
+  return fetch(BASE_URL).then(res => res.json());
 }
 
 export function create(item) {

@@ -1,4 +1,5 @@
 
+
 const Item = require('../../models/item');
 
 
@@ -21,6 +22,7 @@ async function show(req, res) {
 }
 
 async function create(req, res) {
+  // req.body.user = req.user._id
   const item = await Item.create(req.body)
   res.status(201).json(item);
 }
