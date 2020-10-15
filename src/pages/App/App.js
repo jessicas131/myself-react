@@ -8,6 +8,10 @@ import userService from '../../utils/userService';
 import NavBar from '../../components/NavBar/NavBar';
 import AllItemsPage from '../../pages/AllItemsPage/AllItemsPage';
 import AddItemPage from '../../pages/AddItemPage/AddItemPage';
+import ItemDetailPage from '../../pages/ItemDetailPage/ItemDetailPage';
+
+
+
 
 class App extends Component {
   constructor() {
@@ -37,17 +41,10 @@ class App extends Component {
     );
   };
 
-  // handleDeleteItem= async id => {
-  //   await itemAPI.deleteOne(id);
-  //   this.setState(state => ({
-  //     // Yay, filter returns a NEW array
-  //     items: state.items.filter(p => p._id !== id)
-  //   }), () => this.props.history.push('/'));
-  // }
 
   // handleUpdateItem = async updatedItemData => {
   //   const updatedItem = await itemAPI.update(updatedItemData);
-  //   // Using map to replace just the puppy that was updated
+  //
   //   const newItemsArray = this.state.items.map(i => 
   //     i._id === updatedItem._id ? updatedItem : i
   //   );
@@ -77,7 +74,6 @@ class App extends Component {
            exact 
            path='/'  
            render={() => <AllItemsPage items={this.state.items} 
-          //  handleDeleteItem={this.handleDeleteItem} 
            />}
           />
           <Route exact path='/signup' render={({ history }) => 
@@ -97,6 +93,11 @@ class App extends Component {
             exact
             path="/add"
             render={({history}) => <AddItemPage history={history} handleAddItem={this.handleAddItem} />}
+          />
+          <Route
+            exact
+            path="/detail/:id"
+            render={({history}) => <ItemDetailPage history={history} />}
           />
         </Switch>
       </div>

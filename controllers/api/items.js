@@ -12,7 +12,8 @@ update
 }
 
 async function index(req, res) {
-  const items = await Item.find({});
+  const items = await Item.find({user: req.user._id});
+  console.log(items)
   res.status(200).json(items);
 }
 
@@ -22,8 +23,9 @@ async function show(req, res) {
 }
 
 async function create(req, res) {
-  // req.body.user = req.user._id
-  const item = await Item.create(req.body)
+  req.body.user = req.user._id;
+  console.log(req.body)
+  const item = await Item.create(req.body);
   res.status(201).json(item);
 }
 

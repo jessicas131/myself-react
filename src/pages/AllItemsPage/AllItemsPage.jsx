@@ -7,9 +7,11 @@ import * as itemAPI from "../../utils/items-api";
 function AllItemsPage(props) {
   const [items, setItems] = useState([]);
   const [change, setChange] = useState(true);
+
   useEffect(function(){
     itemAPI.getAll().then(res => setItems(res))
   }, [change])
+  
   return (
     <>
       <h1>Inventory List</h1>
