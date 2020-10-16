@@ -9,7 +9,7 @@ import NavBar from '../../components/NavBar/NavBar';
 import AllItemsPage from '../../pages/AllItemsPage/AllItemsPage';
 import AddItemPage from '../../pages/AddItemPage/AddItemPage';
 import ItemDetailPage from '../../pages/ItemDetailPage/ItemDetailPage';
-
+import ItemEditPage from '../../pages/ItemEditPage/ItemEditPage'
 
 
 
@@ -99,6 +99,7 @@ class App extends Component {
             path="/detail/:id"
             render={({history}) => <ItemDetailPage history={history} />}
           />
+      
         </Switch>
       </div>
     );
