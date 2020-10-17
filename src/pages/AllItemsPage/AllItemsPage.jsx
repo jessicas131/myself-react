@@ -14,6 +14,7 @@ function AllItemsPage(props) {
   
   return (
     <>
+    <div className="container">
       <h1 className="title">Inventory List</h1>
       <table className="table table-hover">
       <thead className="thead-light">
@@ -30,6 +31,7 @@ function AllItemsPage(props) {
         ))}
         </tbody>
       </table>
+      </div>
     </>
   );
 }

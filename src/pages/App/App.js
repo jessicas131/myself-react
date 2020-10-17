@@ -70,7 +70,7 @@ class App extends Component {
         handleLogout={this.handleLogout}
         />
         <Switch>
-          <div className="container">
+          
           <Route
            exact 
            path='/'  
@@ -104,7 +104,7 @@ class App extends Component {
             path="/detail/:id"
             render={({history}) => <ItemDetailPage history={history} />}
           />
-        </div>
+        
         </Switch>
       </div>
     );

@@ -12,25 +12,26 @@ function ListItem(props) {
 
   return (
     <>
-          <tr>
-          <th scope="row">
-            <Link to ={{
-              pathname: `/detail/${props.item._id}`,
-              state: { item: props.item },
-            }}>
-              {props.item.itemName}
-            </Link>
-          </th>
-          <td>{props.item.retailPrice}</td>
-          <td>{props.item.quantity}</td>
-          <td> <button type="button"
+      <tr>
+      <th scope="row">
+        <Link to ={{
+          pathname: `/detail/${props.item._id}`,
+          state: { item: props.item },
+        }}>
+          {props.item.itemName}
+        </Link>
+      </th>
+      <td>{props.item.retailPrice}</td>
+      <td>{props.item.quantity}</td>
+      <td> 
+        <button type="button"
                 className="btn btn-outline-dark btn-sm"
                 onClick={handleDeleteItem}
-              >
-                DELETE
-              </button></td>
-          </tr>
-
+        >
+          DELETE
+        </button>
+      </td>
+      </tr>
     </>       
   );
 }

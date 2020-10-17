@@ -21,6 +21,7 @@ function ItemDetailPage(props) {
   return(
     details && (
       <>
+      <div className="container">
       <h1>Item Details:</h1>
       {viewMode ? (
         <div>
@@ -100,6 +101,7 @@ function ItemDetailPage(props) {
         </button>
     </div>
     )}
+    </div>
     </>
     )
   )

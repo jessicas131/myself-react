@@ -34,6 +34,7 @@ class AddItemPage extends Component {
  render() {
    return (
      <>
+     <div className="container">
        <h1>Add an Inventory Item</h1>
        <form ref={this.formRef} autoComplete="off" onSubmit={this.handleSubmit}>
          <div className="form-group">
@@ -98,6 +99,7 @@ class AddItemPage extends Component {
            Add Item
          </button>
        </form>
+     </div>
      </>
    );
  }
