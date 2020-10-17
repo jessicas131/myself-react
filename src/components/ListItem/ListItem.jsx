@@ -12,27 +12,25 @@ function ListItem(props) {
 
   return (
     <>
-    <div className='panel panel-default'>
-      <div className="panel-heading">
-        <h3 className='panel-title'>
-          <Link to ={{
-            pathname: `/detail/${props.item._id}`,
-            state: { item: props.item },
-          }}>
-          {props.item.itemName}
-          </Link>
-        </h3>
-      </div>
-      <div className='panel-footer ListItem-action-panel'>
-        
-        <button
-          className='btn btn-xs btn-danger margin-left-10'
-          onClick={handleDeleteItem}
-        >
-          DELETE
-        </button>
-      </div>
-    </div>
+          <tr>
+          <th scope="row">
+            <Link to ={{
+              pathname: `/detail/${props.item._id}`,
+              state: { item: props.item },
+            }}>
+              {props.item.itemName}
+            </Link>
+          </th>
+          <td>{props.item.retailPrice}</td>
+          <td>{props.item.quantity}</td>
+          <td> <button type="button"
+                className="btn btn-outline-dark btn-sm"
+                onClick={handleDeleteItem}
+              >
+                DELETE
+              </button></td>
+          </tr>
+
     </>       
   );
 }

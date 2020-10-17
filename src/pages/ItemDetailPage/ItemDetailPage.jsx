@@ -1,4 +1,3 @@
-import { set } from "mongoose";
 import React, { useState, useEffect} from "react";
 import {useParams} from 'react-router-dom';
 import * as itemAPI from "../../utils/items-api";

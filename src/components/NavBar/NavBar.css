@@ -1,0 +1,17 @@
+.NavBar {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 45px;
+  background-color: rgb(58, 73, 83, .35);
+}
+
+.NavBar-link {
+  margin: 20px;
+  font-size: 25px;
+  color: white;
+}
+
+.NavBar-welcome {
+  color: rgb(64, 175, 82);
+  font-size: 25px;
+}

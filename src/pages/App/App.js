@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import './App.css';
 import * as itemAPI from "../../utils/items-api";
 import SignupPage from '../SignupPage/SignupPage';
@@ -9,7 +9,7 @@ import NavBar from '../../components/NavBar/NavBar';
 import AllItemsPage from '../../pages/AllItemsPage/AllItemsPage';
 import AddItemPage from '../../pages/AddItemPage/AddItemPage';
 import ItemDetailPage from '../../pages/ItemDetailPage/ItemDetailPage';
-import ItemEditPage from '../../pages/ItemEditPage/ItemEditPage'
+
 
 
 
@@ -25,7 +25,7 @@ class App extends Component {
   /*--- Callback Methods ---*/
   handleLogout = () => {
     userService.logout();
-    this.setState({user: null})
+    this.setState({user: null, items:[]})
   }
   handleSignupOrLogin = () => {
     this.setState({user: userService.getUser()})
@@ -70,11 +70,16 @@ class App extends Component {
         handleLogout={this.handleLogout}
         />
         <Switch>
+          <div className="container">
           <Route
            exact 
            path='/'  
-           render={() => <AllItemsPage items={this.state.items} 
-           />}
+           render={() => 
+           userService.getUser()?
+           <AllItemsPage items={this.state.items} 
+           />
+          :
+          <Redirect to = "/login" />}
           />
           <Route exact path='/signup' render={({ history }) => 
             <SignupPage
@@ -99,7 +104,7 @@ class App extends Component {
             path="/detail/:id"
             render={({history}) => <ItemDetailPage history={history} />}
           />
-      
+        </div>
         </Switch>
       </div>
     );
