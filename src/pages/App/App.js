@@ -42,20 +42,6 @@ class App extends Component {
   };
 
 
-  // handleUpdateItem = async updatedItemData => {
-  //   const updatedItem = await itemAPI.update(updatedItemData);
-  //
-  //   const newItemsArray = this.state.items.map(i => 
-  //     i._id === updatedItem._id ? updatedItem : i
-  //   );
-  //   this.setState(
-  //     {items: newItemsArray},
-  //     // This cb function runs after state is updated
-  //     () => this.props.history.push('/')
-  //   );
-  //  }
-
-
   /*--- Lifecycle Methods ---*/
  async componentDidMount() {
      const items = await itemAPI.getAll();
