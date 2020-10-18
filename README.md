@@ -8,19 +8,17 @@ ______
 ## Screen Shots
 
 ### Home Page
-<img src="https://i.imgur.com/0HbPV32.png" height=200px>
+<img src="https://i.imgur.com/DU0ISPR.png" width=300px>
 
 ### All Dates
-<img src="https://i.imgur.com/EfWWaan.png" height=185px>
+<img src="https://i.imgur.com/RdshYpq.png" width=300px>
 
 ### Add An Event
-<img src="https://i.imgur.com/LDWfu8x.png" height=185px>
+<img src="https://i.imgur.com/mknGJEr.png" width=300px>
 
 ### Look at Past Events 
-<img src="https://i.imgur.com/1KngzE5.png" height=185px>
+<img src="https://i.imgur.com/zNr0zwX.png" width=300px>
 
-### Search for an Event
-<img src="https://i.imgur.com/dKhVE52.png" height=185px>
 
 _____
 
