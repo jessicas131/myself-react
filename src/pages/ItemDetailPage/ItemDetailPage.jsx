@@ -1,6 +1,7 @@
 import React, { useState, useEffect} from "react";
 import {useParams} from 'react-router-dom';
 import * as itemAPI from "../../utils/items-api";
+import "./ItemDetailPage.css"
 
 function ItemDetailPage(props) {
   const [details, setDetails] = useState(null);
@@ -26,12 +27,29 @@ function ItemDetailPage(props) {
       {viewMode ? (
         <div>
           <h3>{details.itemName}</h3>
-          <h3>{details.quantity}</h3>
-          <h3>{details.retailPrice}</h3>
-          <h3>{details.sku}</h3>
-          <h3>{details.supplier}</h3>
-          <h3>{details.description}</h3>
-          <button onClick={() => setViewMode(false)}>EDIT</button>
+          <h3>
+            <span className="ItemDetailPage-labels"> Quantity:</span> {details.quantity}
+          </h3>
+          <h3>
+            <span className="ItemDetailPage-labels">Retail Price: </span> {details.retailPrice}
+          </h3>
+          <h3>
+            <span className="ItemDetailPage-labels">SKU: </span>
+            {details.sku}
+          </h3>
+          <h3>
+            <span className="ItemDetailPage-labels">Supplier: </span>
+            {details.supplier}
+          </h3>
+          <h3>
+          <span className="ItemDetailPage-labels">Description: </span>
+            {details.description}
+          </h3>
+          <button 
+            className="btn btn-outline-dark btn-sm" 
+            onClick={() => setViewMode(false)}>
+            EDIT
+            </button>
       </div>
       ) :
       (
@@ -90,14 +108,14 @@ function ItemDetailPage(props) {
             onChange={(evt) => setEditedItem({...editedItem, ...{description: evt.target.value}})}
           />
         </div>
-        <button onClick={() => {
+        <button className="btn btn-outline-dark btn-sm" 
+          onClick={() => {
           itemAPI.update(editedItem).then(res => {
             setDetails(res)
           })
           setViewMode(!viewMode);
-          
-        }}>
-          Submit
+          }}>
+            Submit
         </button>
     </div>
     )}
